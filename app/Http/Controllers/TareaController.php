@@ -24,5 +24,16 @@ class TareaController extends Controller
         return $tarea;
     }
 
+    public function modificar(Request $request, $idTarea){
+        $tarea = Tarea::findOrFail($idTarea);
+        $tarea -> titulo = $request -> post("titulo");
+        $tarea -> contenido = $request -> post("contenido");
+        $tarea -> estado = $request -> post("estado");
+        $tarea -> autor = $request -> post("autor");
+        $tarea -> save();
+        return $tarea;
+
+    }
+
 
 }
