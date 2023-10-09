@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TareaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get("/listar",[TareaController::class,"listar"]);
+
+Route::post("/insertar",[TareaController::class,"insertar"]);
+
+Route::put("/modificar/{d}",[TareaController::class,"modificar"]);
+
+Route::delete("/eliminar/{d}",[TareaController::class,"eliminar"]);
