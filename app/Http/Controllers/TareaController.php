@@ -35,5 +35,13 @@ class TareaController extends Controller
 
     }
 
+    public function eliminar(Request $request, $idTarea){
+        $tarea = Tarea::findOrFail($idTarea);
+        $tarea -> delete();
+
+        return [ "mensaje" => "Tarea $idTarea eliminada."];
+
+    }
+
 
 }

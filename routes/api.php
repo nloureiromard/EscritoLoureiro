@@ -23,4 +23,6 @@ Route::get("/listar",[TareaController::class,"listar"]);
 
 Route::post("/insertar",[TareaController::class,"insertar"]);
 
-Route::put("/modificar/{d}",[PersonaController::class,"modificar"]);
+Route::put("/modificar/{d}",[TareaController::class,"modificar"]);
+
+Route::delete("/eliminar/{d}",[TareaController::class,"eliminar"]);
