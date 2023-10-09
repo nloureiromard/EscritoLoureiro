@@ -12,4 +12,17 @@ class TareaController extends Controller
     }
 
 
+    public function insertar(Request $request){
+        $tarea = new Tarea;
+        $tarea -> titulo = $request -> post("titulo");
+        $tarea -> contenido = $request -> post("contenido");
+        $tarea -> estado = $request -> post("estado");
+        $tarea -> autor = $request -> post("autor");
+
+        $tarea -> save();
+
+        return $tarea;
+    }
+
+
 }
